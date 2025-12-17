@@ -1,0 +1,65 @@
+🎬 4 Cinephile
+
+4 Cinephile is a user-friendly, full-stack movie summary website designed especially for movie lovers. It allows users to search for any movie and instantly view detailed information such as posters, plot, cast, ratings, and more using the OMDb API.
+
+🌟 Features
+
+🔍 Search movies by title
+
+🖼️ View movie posters
+
+📝 Read plot summaries (short/full)
+
+🎭 See cast, director, and writer details
+
+⭐ Ratings from IMDb, Rotten Tomatoes, and Metacritic
+
+🏆 Awards information
+
+🎨 Clean UI with sky-blue background and yellow movie cards
+
+📱 Responsive and easy-to-use interface
+
+🛠️ Tech Stack
+Backend
+
+Python
+
+Flask
+
+Requests library
+
+OMDb API
+
+Frontend
+
+HTML
+
+git clone https://github.com/Anamikadeepu/4-Cinephile.git
+cd 4-Cinephile
+
+python -m venv venv
+
+
+# On Windows
+venv\Scripts\activate
+pip install flask requests
+pip install flask requests
+python app.py
+http://127.0.0.1:5000 - this is the browser link to my website 4- Cinephile
+
+📌 Future Enhancements
+
+Actor profile pages
+
+Movie recommendations
+
+Search history
+
+Dark mode
+
+Deployment on cloud (Render / Railway / Vercel)
+
+CSS
+
+Jinja2 Templates
