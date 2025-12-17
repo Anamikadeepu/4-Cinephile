@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Summary</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>🎬 4 Cinephile</h1>
+
+    <!-- Search form -->
+    <form method="post">
+        <input type="text" name="movie" placeholder="Enter movie name" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Movie info -->
+    {% if movie %}
+        {% if movie.Response == "True" %}
+            <div class="movie-card clearfix">
+                <!-- Poster -->
+                <img src="{{ movie.Poster }}" alt="Movie Poster">
+                
+                <!-- Movie details -->
+                <h2>{{ movie.Title }} ({{ movie.Year }})</h2>
+                <p><strong>Plot:</strong> {{ movie.Plot }}</p>
+                <p><strong>Genre:</strong> {{ movie.Genre }}</p>
+                <p><strong>Director:</strong> {{ movie.Director }}</p>
+                <p><strong>Writer:</strong> {{ movie.Writer }}</p>
+                <p><strong>Actors:</strong> {{ movie.Actors }}</p>
+                <p><strong>Runtime:</strong> {{ movie.Runtime }}</p>
+                <p><strong>Language:</strong> {{ movie.Language }}</p>
+                <p><strong>Country:</strong> {{ movie.Country }}</p>
+                <p><strong>Awards:</strong> {{ movie.Awards }}</p>
+                
+                <p><strong>Ratings:</strong></p>
+                <ul>
+                    {% for r in movie.Ratings %}
+                        <li>{{ r.Source }}: {{ r.Value }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% else %}
+            <p>❌ Movie not found</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
+
